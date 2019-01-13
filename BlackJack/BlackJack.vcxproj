@@ -118,7 +118,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Carta.cpp" />
+    <ClCompile Include="JugadorGenerico.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mazo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Carta.h" />
+    <ClInclude Include="JugadorGenerico.h" />
+    <ClInclude Include="Mazo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
