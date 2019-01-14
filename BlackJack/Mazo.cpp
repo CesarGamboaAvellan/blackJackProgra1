@@ -1,6 +1,7 @@
 #include "Mazo.h"
 #include "Carta.h"
 #include <iostream>
+#include <algorithm>
 
 Mazo::Mazo() {
 
@@ -39,9 +40,10 @@ void Mazo::inicializar() {
 	}
 }
 // Nota, por el momento lo puse a recibir un int, para asegurarme que se estan guardando las cartas
-Carta Mazo::tomarCarta(int i) {
-	return cartas[i];
+Carta Mazo::tomarCarta(int posicionEnElArrayDeLaCarta) {
+	std::cout << "Salio la carta: " << cartas[posicionEnElArrayDeLaCarta].getValor() << cartas[posicionEnElArrayDeLaCarta].getPalo() << std::endl;
+	return cartas[posicionEnElArrayDeLaCarta];
 }
 void Mazo::barajar() {
-
+	std::random_shuffle(std::begin(cartas), std::end(cartas));
 }

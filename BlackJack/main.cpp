@@ -1,22 +1,24 @@
 #include "Mazo.h"
 #include <iostream>
+#include <time.h>
 int main() {
+	// Requerido para usar el metodo shuffle
+
+	srand(time(NULL));
 	Mazo nuevoMazo;
+	// Inicializa la baraja de cartas
+
 	nuevoMazo.inicializar();
-	// nota: estoy imprimiendo la carta que se guardo en la posicion 23, solo para mostrar que se creo la baraja
-	std::cout << "Se creo la siguiente carta en la posicion 23 del array" << std::endl;
-	std::cout<< "Palo: " << nuevoMazo.tomarCarta(23).getPalo();
-	std::cout << "Valor: " << nuevoMazo.tomarCarta(23).getValor();
-	std::cout<< std::endl;
-	// nota: estoy imprimiendo la carta que se guardo en la posicion 0, solo para mostrar que se creo la baraja
-	std::cout << "Se creo la siguiente carta en la posicion 0 del array" << std::endl;
-	std::cout << "Palo: " << nuevoMazo.tomarCarta(0).getPalo();
-	std::cout << "Valor: " << nuevoMazo.tomarCarta(0).getValor();
-	std::cout << std::endl;
-	// nota: estoy imprimiendo la carta que se guardo en la posicion 51, solo para mostrar que se creo la baraja
-	std::cout << "Se creo la siguiente carta en la posicion 51 del array" << std::endl;
-	std::cout <<"Palo: " << nuevoMazo.tomarCarta(51).getPalo();
-	std::cout <<"Valor: "<< nuevoMazo.tomarCarta(51).getValor();
-	std::cout << std::endl;
+
+	// baraja las cartas 
+
+	nuevoMazo.barajar();
+
+	// retorna la primera carta en el deck, incrementa el contador del array cada vez
+	// ya el deck va a estar barajado en este punto
+	// para efectos de prueba, se imprimen 4 cartas
+	for (int i = 0; i < 5; i++) {
+		nuevoMazo.tomarCarta(i);
+	}
 	return 0;
 }
